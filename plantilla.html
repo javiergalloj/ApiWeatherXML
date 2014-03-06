@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-// W3C // DTD XHTML 1.0 Strict //EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='es' charset="utf-8">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>EL TIEMPO</title>
+	</head>
+	<body>
+		<h1>EL TIEMPO EN ANDALUCIA</h1>
+		{% set contador = 0 %}
+		{% for provincia in provincias %}
+		<h2>{{ provincia }}</h2>
+		<ul>
+			<li>Temperatura minima prevista:  {{ temp_min[contador] }} grados Celsius.</li>
+			<li>Temperatura maxima prevista: {{ temp_max[contador] }} grados Celsius.</li>
+			<li>Viento: {{ viento[contador] }} Km/h. Direccion: {{ direccion[contador] }}.</li>
+		</ul>
+		{% set contador = contador + 1 %}
+		{% endfor %}
+	</body>
+</html>
